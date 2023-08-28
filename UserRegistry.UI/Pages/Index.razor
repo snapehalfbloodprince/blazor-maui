@@ -1,3 +1,56 @@
 ﻿@page "/"
 
 <h1>Hello, world!</h1>
+
+<UserList Items="items" OnCreate="Create" OnEdit="Edit" OnDelete="Delete"/>
+
+@code{
+    private List<UserListItem> items = new()
+    {
+        new UserListItem
+        {
+            Id=1,
+            FirstName = "Francesco",
+            LastName = "Piga",
+            Address = "Via dalle palle, 6, Cagliari",
+            CreatedAt = new DateTime(2022,01,01)
+        },
+        new UserListItem
+        {
+            Id=2,
+            FirstName = "Anna",
+            LastName = "Piga",
+            Address = "Via dalle palle, 6, Cagliari",
+            CreatedAt = new DateTime(2022,01,01)
+        },
+        new UserListItem
+        {
+            Id=3,
+            FirstName = "Paolo",
+            LastName = "Piga",
+            Address = "Via dalle palle, 6, Cagliari",
+            CreatedAt = new DateTime(2022,01,01)
+        }
+    };
+
+    private void Create()
+    {
+        items.Add(new UserListItem
+        {
+            Id = 4,
+            FirstName = "Rita",
+            LastName = "Lai",
+            Address = "Via dalle palle, 6, Cagliari",
+            CreatedAt = new DateTime(2022, 01, 01)
+        });
+    }
+    private void Edit(UserListItem item)
+    {
+        item.CreatedAt = DateTime.Now;
+    }
+    private void Delete(UserListItem item)
+    {
+        items.Remove(item);
+    }
+
+}
