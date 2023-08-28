@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.10" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="Pages\" />
     <None Remove="Components\" />
     <None Remove="Models\" />
@@ -24,5 +20,8 @@
     <Folder Include="Pages\" />
     <Folder Include="Components\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.5" />
   </ItemGroup>
 </Project>
